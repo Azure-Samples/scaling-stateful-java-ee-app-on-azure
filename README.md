@@ -595,9 +595,7 @@ Use Azure CLI to set database connection info:
 az webapp config appsettings set  \
     --resource-group ${RESOURCEGROUP_NAME} \
     --name ${WEBAPP_NAME}-${REGION_1}  \
-    --settings  SQL_CONNECTION_URL=${SQL_CONNECTION_URL} \
-    SQL_SERVER_ADMIN_FULL_NAME=${SQL_SERVER_ADMIN_FULL_NAME} \
-    SQL_SERVER_ADMIN_PASSWORD=${SQL_SERVER_ADMIN_PASSWORD}
+    --settings  SQL_CONNECTION_URL=${SQL_CONNECTION_URL}
 
 [
   {
