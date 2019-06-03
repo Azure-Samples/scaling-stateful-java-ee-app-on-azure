@@ -745,7 +745,7 @@ Let us stop one of the stateful Java Web app and check how
 failover happens:
 
 ```bash
-az webapp stop -g ${RESOURCEGROUP_NAME} -n ${WEBAPP_NAME}-${REGION_1}
+az webapp stop -g ${RESOURCEGROUP_NAME} -n ${WEBAPP_NAME}-${REGION_2}
 ```
 
 Traffic Manager Profile should look like this:
