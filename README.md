@@ -778,7 +778,7 @@ against YOUR code in
 ## Congratulations!
 
 Congratulations!! You migrated 
-existing Java enterprise workloads to Azure, aka stateful Java app to App Service Linux and 
+existing Java enterprise workloads to Azure, aka stateful Java EE app to App Service Linux and
 app's externalized session store to Azure SQL Database.
 
 ## Resources
