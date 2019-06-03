@@ -1,0 +1,6 @@
+[submodule "initial/stateful-java-web-app"]
+	path = initial/stateful-java-web-app
+	url = https://github.com/microsoft/stateful-java-web-app.git
+[submodule "complete/stateful-java-web-app"]
+	path = complete/stateful-java-web-app
+	url = https://github.com/microsoft/stateful-java-web-app.git
