@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="">
+    <!-- Specify Redis Store -->
+    <Valve className="com.gopivotal.manager.SessionFlushValve" />
+    <Manager className="org.apache.catalina.session.PersistentManager">
+        <Store className="com.gopivotal.manager.redis.RedisStore"
+               connectionPoolSize="20"
+               host="${REDIS_CACHE_NAME}.redis.cache.windows.net"
+               port="${REDIS_PORT}"
+               password="${REDIS_PASSWORD}"
+               sessionKeyPrefix="${REDIS_SESSION_KEY_PREFIX}"
+               timeout="2000"
+        />
+    </Manager>
+</Context>

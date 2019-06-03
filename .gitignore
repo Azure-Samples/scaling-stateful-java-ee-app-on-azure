@@ -21,3 +21,12 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# IntelliJ
+.idea/*
+
+# Scripts
+initial/stateful-java-web-app/.scripts/*
+initial/stateful-java-web-app/*.sh
+complete/stateful-java-web-app/.scripts/*
+complete/stateful-java-web-app/*.sh
