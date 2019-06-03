@@ -4,7 +4,7 @@ platforms: java
 author: selvasingh, sadigopu
 ---
 
-# Scaling Stateful Java Apps on Azure
+# Scaling Stateful Java EE Apps on Azure
 
 This guide walks you through the process of scaling 
 stateful Java EE on Azure, aka:
