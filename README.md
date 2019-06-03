@@ -465,6 +465,7 @@ Install a WildFly module:
 # and module xml points to module description, see below
 
 module add --name=com.microsoft --resources=/home/site/deployments/tools/mssql-jdbc-7.2.1.jre8.jar --module-xml=/home/site/deployments/tools/mssql-module.xml
+
 ```
 Where `mssql-module.xml` describes the module:
 
@@ -484,13 +485,19 @@ Where `mssql-module.xml` describes the module:
 Add a JDBC driver for SQL Database:
 
 ```bash
-/subsystem=datasources/jdbc-driver=sqlserver:add(driver-name="sqlserver",driver-module-name="com.microsoft",driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver,driver-datasource-class-name=com.microsoft.sqlserver.jdbc.SQLServerDataSource)
+/subsystem=datasources/jdbc-driver=sqlserver:add(driver-name="sqlserver",driver-module-name="com.microsoft",driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver)
 ```
 
 Install a data source by using the data-source shortcut command:
 
 ```bash
-data-source add --name=sqlDS --jndi-name=java:jboss/datasources/sqlDS --driver-name=sqlserver --connection-url=${SQL_CONNECTION_URL,env.SQL_CONNECTION_URL:example} --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLExceptionSorter
+data-source add --name=sqlDS --jndi-name=java:/sqlDS --connection-url=${SQL_CONNECTION_URL,env.SQL_CONNECTION_URL:jdbc:sqlserver://sqlserverhost:1433;DatabaseName=db} --driver-name=sqlserver --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLExceptionSorter
+```
+
+Configure Web local cache to use the above SQL Database
+
+```bash
+/subsystem=infinispan/cache-container=web/local-cache=passivation/store=jdbc:add(data-source="sqlDS",passivation=false,preload=true,shared)
 ```
 
 A server reload may be required for the changes to take effect:
