@@ -758,8 +758,8 @@ Refresh the browser:
 
 Failover SUCCEEDED because the session tracking begins,
 particularly, once the connection breaks, the client 
-is round robined to another server in East US data center,
-then the correlation is continued, tracks to `Number of Visits = 2`, 
+is round robined to another server in West US data center,
+then the correlation is continued, tracks to `Number of Visits = 4`, 
 using externalized sessions.
 
 You can check out the contents of the session table in the Azure SQL Database:
