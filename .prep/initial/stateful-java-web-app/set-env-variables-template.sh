@@ -22,8 +22,7 @@ export SQL_DATABASE_NAME=<your sql server database>
 # Secrets composed from supplied secrets for PostgreSQL
 export SQL_SERVER_FULL_NAME=${SQL_SERVER_NAME}.database.windows.net
 export SQL_SERVER_ADMIN_FULL_NAME=${SQL_SERVER_ADMIN_LOGIN_NAME}@${SQL_SERVER_NAME}
-export SQL_CONNECTION_URL="jdbc:sqlserver://${SQL_SERVER_FULL_NAME}:1433;database=${SQL_DATABASE_NAME};user=${SQL_SERVER_ADMIN_FULL_NAME};password=${SQL_SERVER_ADMIN_PASSWORD};"
-
+export SQL_CONNECTION_URL="jdbc:sqlserver://${SQL_SERVER_FULL_NAME}:1433;user=${SQL_SERVER_ADMIN_FULL_NAME};password=${SQL_SERVER_ADMIN_PASSWORD};database=${SQL_DATABASE_NAME};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;"
 
 # Supply - Traffic Manager Info
 export TRAFFIC_MANAGER_PROFILE_NAME=<your-traffic-manager-profile-name>

@@ -13,7 +13,7 @@ data-source add --name=sqlDS --jndi-name=java:/sqlDS --connection-url=${SQL_CONN
 #data-source add --name=sqlDS --jndi-name=java:/sqlDS --connection-url=${SQL_CONNECTION_URL,env.SQL_CONNECTION_URL:jdbc:sqlserver://sqlserverhost:1433;DatabaseName=db} --driver-name=sqlserver --user-name=${SQL_SERVER_ADMIN_FULL_NAME,env.SQL_SERVER_ADMIN_FULL_NAME:mysql} --password=${SQL_SERVER_ADMIN_PASSWORD,env.SQL_SERVER_ADMIN_PASSWORD:example} --validate-on-match=true --background-validation=false --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.mssql.MSSQLExceptionSorter
 echo Configuring Web local cache to use Azure SQL Database as External Store
 # configure web local cache to use the above db
-/subsystem=infinispan/cache-container=web/local-cache=passivation/store=jdbc:add(data-source="sqlDS",passivation=false,preload=true,shared)
+/subsystem=infinispan/cache-container=web/local-cache=passivation/store=jdbc:add(data-source="sqlDS",passivation=false,preload=true,shared,purge=false)
 run-batch
 reload --use-current-server-config=true
 echo Installed MSSQL datasource
