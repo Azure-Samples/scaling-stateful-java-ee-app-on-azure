@@ -497,7 +497,7 @@ data-source add --name=sqlDS --jndi-name=java:/sqlDS --connection-url=${SQL_CONN
 Configure Web local cache to use the above SQL Database
 
 ```bash
-/subsystem=infinispan/cache-container=web/local-cache=passivation/store=jdbc:add(data-source="sqlDS",passivation=false,preload=true,shared)
+/subsystem=infinispan/cache-container=web/local-cache=passivation/store=jdbc:add(data-source="sqlDS",passivation=false,preload=true,shared,purge=false)
 ```
 
 A server reload may be required for the changes to take effect:
