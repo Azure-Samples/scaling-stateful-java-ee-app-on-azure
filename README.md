@@ -1,7 +1,11 @@
 ---
-services: app-service, sql, redis-cache
-platforms: java
-author: selvasingh, sadigopu
+page_type: sample
+languages:
+- 
+products:
+- azure
+description: "This guide walks you through the process of scaling "
+urlFragment: scaling-stateful-java-ee-app-on-azure
 ---
 
 # Scaling Stateful Java EE Apps on Azure
