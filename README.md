@@ -1,11 +1,11 @@
 ---
 page_type: sample
 languages:
-- 
+- java
 products:
 - azure
-description: "This guide walks you through the process of scaling "
-urlFragment: scaling-stateful-java-ee-app-on-azure
+description: "This guide walks you through the process of scaling stateful Java EE on Azure."
+urlFragment: scaling-apps-java-sample
 ---
 
 # Scaling Stateful Java EE Apps on Azure
