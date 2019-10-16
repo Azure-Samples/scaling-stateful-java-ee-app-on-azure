@@ -78,7 +78,7 @@ an Azure subscription. If you do not already have an Azure
 subscription, you can activate your 
 [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) 
 or sign up for a 
-[free Azure account]((https://azure.microsoft.com/pricing/free-trial/)).
+[free Azure account](https://azure.microsoft.com/pricing/free-trial/).
 
 In addition, you will need the following:
 
